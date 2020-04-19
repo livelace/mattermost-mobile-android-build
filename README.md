@@ -33,7 +33,7 @@ keytool -genkey -v -keystore conf/android-apk-signing.keystore \
 cp google-services.json conf/google-services.json
 ```
 
-**Initialize build configuration:**
+**Initialize configuration:**
 
 ```bash
 docker run -ti --rm \
@@ -42,7 +42,7 @@ docker run -ti --rm \
     livelace/mattermost-mobile-android-build init
 ```
 
-**Edit build configuration:**
+**Edit configuration:**
 
 ```bash
 cp conf/build-sample.conf conf/build.conf 
