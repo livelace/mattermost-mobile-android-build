@@ -28,6 +28,7 @@ Usage:
 
 init            - Initialize build configuration.
 build           - Build Mattermost mobile client.
+clean           - Clean produced data during build (doesn't affect configuration).
 shell           - Execute shell (useful for debugging and customization).
 
 EOF
@@ -104,11 +105,11 @@ elif [[ "$ACTION" = "build" ]];then
 elif [[ "$ACTION" = "clean" ]];then
     echo "INFO: Perform cleanup. You have 10 seconds to change your mind [CTRL+C] ..."
     sleep 10
-    rm -rf /data/* >/dev/null 2>&1
-    rm -rf /data/.* >/dev/null 2>&1
+    rm -rf /data/* /data/.* >/dev/null 2>&1
 
 elif [[ "$ACTION" = "shell" ]];then
     exec /bin/bash
+
 else
     echo "ERROR: Unknown action: ${ACTION}"
     exit 1
