@@ -27,7 +27,7 @@ keytool -genkey -v -keystore conf/android-apk-signing.keystore \
   -alias <KEY_ALIAS> -keyalg RSA -keysize 2048 -validity 10000 
 ```
 
-**Place FCM configuration (Firebase Cloud Messaging):**
+**Place FCM (Firebase Cloud Messaging) configuration (how to get one):**
 
 ```bash
 cp google-services.json conf/google-services.json
@@ -46,6 +46,7 @@ docker run -ti --rm \
 
 ```bash
 cp conf/build-sample.conf conf/build.conf 
+vim conf/build.conf
 ```
 
 **Build application:**
