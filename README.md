@@ -20,7 +20,7 @@ docker run -ti --rm \
     livelace/mattermost-mobile-android-build help
 ```
 
-**Generate keystore file (for APK signing):**
+**Generate key and keystore (for APK signing):**
 
 ```bash
 keytool -genkey -v -keystore conf/android-apk-signing.keystore \
