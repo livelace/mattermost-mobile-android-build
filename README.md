@@ -1,6 +1,6 @@
 ## Description:
 
-This project is a Docker image for building Android version of Mattermost Mobile Client. The primary audience - persons who want to use their own server with Mobile Push Notifications.
+This project is a Docker image for building [Android version](https://play.google.com/store/apps/details?id=com.mattermost.rn) of [Mattermost Mobile Client](https://github.com/mattermost/mattermost-mobile). The primary audience - persons who want to have their own [Mobile Push Notifications](https://developers.mattermost.com/contribute/mobile/push-notifications/).
 
 ## Usage:
 
@@ -27,7 +27,7 @@ keytool -genkey -v -keystore conf/android-apk-signing.keystore \
   -alias <KEY_ALIAS> -keyalg RSA -keysize 2048 -validity 10000 
 ```
 
-**Place FCM (Firebase Cloud Messaging) configuration (how to get one):**
+**Place FCM ([Firebase Cloud Messaging](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging)) configuration ([how to get one](https://developers.mattermost.com/contribute/mobile/push-notifications/android/)):**
 
 ```bash
 cp google-services.json conf/google-services.json
