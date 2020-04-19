@@ -8,7 +8,7 @@ This project is a Docker image for building [Android version](https://play.googl
 
 ```bash
 mkdir conf data
-chmod 777 data
+chmod 777 conf data
 ```
 
 **Get help information:**
@@ -23,7 +23,7 @@ docker run -ti --rm \
 **Generate keystore file (for APK signing):**
 
 ```bash
-keytool -genkey -v -keystore conf/android-apk-signing.keystore \ 
+keytool -genkey -v -keystore conf/android-apk-signing.keystore \
   -alias <KEY_ALIAS> -keyalg RSA -keysize 2048 -validity 10000 
 ```
 
@@ -61,7 +61,7 @@ docker run -ti --rm \
 **Install application:**
 
 ```bash
-adb install data/
+adb install data/<BRANCH_TO_BUILD>/mattermost-mobile/<APP_NAME>.apk
 ```
 
 **Clean produced data:**
