@@ -1,4 +1,4 @@
-### WARNING: Compatibility 1.39+
+### WARNING: Compatible 1.39+
 
 ## Description:
 
