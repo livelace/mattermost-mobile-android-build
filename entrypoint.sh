@@ -95,8 +95,7 @@ elif [[ "$ACTION" = "build" ]];then
         cd "$TARGET_DIR"
 
         # Build app.
-        make pre-build
-        make build-android
+        npm run build:android
 
     fi
 
