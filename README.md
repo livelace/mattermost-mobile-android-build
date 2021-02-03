@@ -1,3 +1,5 @@
+### WARNING: Compatibility 1.39+
+
 ## Description:
 
 This project is a Docker image for building [Android version](https://play.google.com/store/apps/details?id=com.mattermost.rn) of [Mattermost Mobile Client](https://github.com/mattermost/mattermost-mobile). The primary audience - persons who want to use their own [Mobile Push Notifications](https://developers.mattermost.com/contribute/mobile/push-notifications/) service (you will use Google servers anyway).
