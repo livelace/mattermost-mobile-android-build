@@ -7,8 +7,8 @@ libraries {
     }
     mattermost
     nexus {
-        source = "/data/release-1.40/mattermost-mobile/matterlace.apk"
-        destination = "dists-internal/matterlace/matterlace-release-1.40.apk"
+        source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"
+        destination = "dists-internal/matterlace/matterlace-${env.BRANCH}.apk"
     }
     shell {
         build = """
@@ -18,9 +18,10 @@ libraries {
             echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json && \
             echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore && \
 
-            sed -i "s|<BRANCH>|release-1.40|g" /conf/build.conf && \
+            sed -i "s|<BRANCH>|${env.BRANCH}|g" /conf/build.conf && \
 
             /entrypoint.sh build
         """
     }
+    utils
 }
