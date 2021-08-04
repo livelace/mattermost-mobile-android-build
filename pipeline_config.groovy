@@ -18,7 +18,7 @@ libraries {
             echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json
             echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore
 
-            sed -i "s|<BRANCH>|release-1.31|g" /conf/build.conf
+            sed -i "s|<BRANCH>|release-1.46|g" /conf/build.conf
 
             /entrypoint.sh build
         """
