@@ -8,6 +8,7 @@ libraries {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
     }
     kaniko {
+        context = "/tmp/job/work"
         destination = "dev/mattermost-mobile-android-build:latest"
     }
     mattermost
