@@ -1,3 +1,5 @@
+def TIMEOUT = env.TIMEOUT ? env.TIMEOUT : "120"
+
 libraries {
     git {
         repo_url = "https://github.com/livelace/mattermost-mobile-android-build.git"
@@ -22,6 +24,7 @@ libraries {
 
             /entrypoint.sh build
         """
+        timeout = TIMEOUT
     }
     utils
 }
