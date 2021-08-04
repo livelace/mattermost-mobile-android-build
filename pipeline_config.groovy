@@ -4,6 +4,7 @@ libraries {
     }
     k8s_build
     kaniko {
+        context = "/tmp/job/work"
         destination = "dev/mattermost-mobile-android-build:latest"
     }
     mattermost
