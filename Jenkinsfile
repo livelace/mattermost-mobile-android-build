@@ -1,6 +1,12 @@
+def VERSIONS = [
+    'release-1.46',
+    'release-1.45',
+    'release-1.40'
+]
+
 properties([
         parameters([
-                choice(choices: ['release-1.45', 'release-1.40'], name: 'BRANCH'),
+                choice(choices: VERSIONS, name: 'BRANCH'),
                 string(defaultValue: '120', name: 'TIMEOUT')
         ])])
 
@@ -13,4 +19,4 @@ def secret = [
         ["BUILD_KEYSTORE", "secret/app/mattermost-mobile-android", "keystore"]
 ]
 
-k8s_build(secret)
+//k8s_build(secret)
