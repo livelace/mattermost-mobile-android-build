@@ -1,9 +1,9 @@
 FROM            ruby:2.7.1-slim
 
-ENV             ANDROID_COMMAND_LINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip"
+ENV             ANDROID_COMMAND_LINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip"
 ENV             ANDROID_HOME="/opt/android/sdk"
 ENV             ANDROID_ACCEPT_LICENSE="yes"
-ENV             ANDROID_PLATFORM_VERSION="24"
+ENV             ANDROID_PLATFORM_VERSION="29"
 ENV             DEBIAN_FRONTEND="noninteractive"
 ENV             LANG="en_US.UTF-8"
 ENV             LANGUAGE="en_US.UTF-8"
