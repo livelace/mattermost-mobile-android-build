@@ -5,20 +5,20 @@ libraries {
     k8s_build {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
     }
-//     kaniko {
-//         context = "/tmp/job/work"
-//         destination = "dev/mattermost-mobile-android-build:latest"
-//     }
     mattermost
+    nexus {
+        source = "/data/release-1.40/mattermost-mobile/matterlace.apk"
+        destination = "dists-internal/matterlace/matterlace-release-1.40.apk"
+    }
     shell {
         build = """
-            mkdir -p /conf /data
+            mkdir -p /conf /data && \
 
-            echo \$BUILD_CONF | base64 -d > /conf/build.conf
-            echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json
-            echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore
+            echo \$BUILD_CONF | base64 -d > /conf/build.conf && \
+            echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json && \
+            echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore && \
 
-            sed -i "s|<BRANCH>|release-1.40|g" /conf/build.conf
+            sed -i "s|<BRANCH>|release-1.40|g" /conf/build.conf && \
 
             /entrypoint.sh build
         """
