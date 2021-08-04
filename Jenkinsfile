@@ -19,4 +19,4 @@ def secret = [
         ["BUILD_KEYSTORE", "secret/app/mattermost-mobile-android", "keystore"]
 ]
 
-//k8s_build(secret)
+k8s_build(secret)
