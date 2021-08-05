@@ -9,6 +9,7 @@ libraries {
 //     }
     k8s_build {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
+        timeout = TIMEOUT
     }
 //     kaniko {
 //         context = "/tmp/job/work"
@@ -30,7 +31,6 @@ libraries {
 
             /entrypoint.sh build
         """
-        timeout = TIMEOUT
     }
     utils
 }
