@@ -31,7 +31,8 @@ RUN             echo "deb https://deb.nodesource.com/node_16.x buster main" > "/
 
 RUN             useradd -m builder && \
                 mkdir -p "/opt/android" && \
-                chown builder "/opt/android"
+                chown builder "/opt/android" && \
+                mkdir -p "/conf" "/data" && chmod 777 "/conf" "/data"
 
 USER            builder
 
