@@ -15,6 +15,8 @@ libraries {
             BUILD_FIREBASE, secret/app/mattermost-mobile-android, firebase
             BUILD_KEYSTORE, secret/app/mattermost-mobile-android, keystore
         """
+
+        timeout = TIMEOUT
     }
 //     kaniko {
 //         context = "/tmp/job/work"
@@ -36,6 +38,8 @@ libraries {
 
             /entrypoint.sh build
         """
+
+        timeout = TIMEOUT
     }
     utils
 }
