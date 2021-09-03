@@ -11,9 +11,9 @@ libraries {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
 
         secret = """
-            BUILD_CONF, secret/app/mattermost-mobile-android, conf
-            BUILD_FIREBASE, secret/app/mattermost-mobile-android, firebase
-            BUILD_KEYSTORE, secret/app/mattermost-mobile-android, keystore
+            env, BUILD_CONF, secret/app/mattermost-mobile-android, conf
+            env, BUILD_FIREBASE, secret/app/mattermost-mobile-android, firebase
+            env, BUILD_KEYSTORE, secret/app/mattermost-mobile-android, keystore
         """
 
         timeout = TIMEOUT
