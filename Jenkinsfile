@@ -1,4 +1,5 @@
 def VERSIONS = [
+    'release-1.48',
     'release-1.46',
     'release-1.45',
     'release-1.40'
