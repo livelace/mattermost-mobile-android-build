@@ -1,12 +1,3 @@
-def VERSIONS = [
-    'release-1.50',
-    'release-1.49',
-    'release-1.48',
-    'release-1.46',
-    'release-1.45',
-    'release-1.40'
-]
-
 properties([
     buildDiscarder(logRotator(
         artifactDaysToKeepStr: '',
@@ -15,11 +6,21 @@ properties([
         numToKeepStr: '30'
     )),
     parameters([
-            choice(choices: VERSIONS, name: 'BRANCH'),
-            string(defaultValue: '120', name: 'TIMEOUT')
+        [
+            $class              : 'CascadeChoiceParameter',
+            choiceType          : 'PT_SINGLE_SELECT',
+            description         : null,
+            filterLength        : 1,
+            filterable          : false,
+            name                : 'BRANCH',
+            randomName          : 'choice-parameter-245877844563629',
+            referencedParameters: '',
+            script              : [$class: 'ScriptlerScript', parameters: [], scriptlerScriptId: 'mattermost_mobile_version.groovy']
+        ],
+        string(defaultValue: '120', name: 'TIMEOUT')
     ])
 ])
 
 utils_check_first_run()
 
-k8s_build()
+//k8s_build()
