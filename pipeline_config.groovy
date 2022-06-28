@@ -1,4 +1,4 @@
-def TIMEOUT = env.TIMEOUT ? env.TIMEOUT : "120"
+def TIMEOUT = env.TIMEOUT ? env.TIMEOUT.toInteger() : 120
 
 libraries {
     git {
