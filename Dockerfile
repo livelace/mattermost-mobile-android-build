@@ -29,6 +29,8 @@ RUN             echo "deb https://deb.nodesource.com/node_16.x buster main" > "/
                 apt-get update && \
                 apt-get install -y nodejs
 
+RUN             npm -g install react-native-cli
+
 RUN             useradd -m builder && \
                 mkdir -p "/opt/android" && \
                 chown builder "/opt/android" && \
