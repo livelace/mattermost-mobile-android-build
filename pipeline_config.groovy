@@ -9,6 +9,7 @@ libraries {
 //     }
     k8s_build {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
+        force_pull = true
 
         secret = """
             env, BUILD_CONF, secret/app/mattermost-mobile-android, conf
