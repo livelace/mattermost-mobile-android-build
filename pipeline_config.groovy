@@ -11,6 +11,12 @@ libraries {
         image = "harbor-core.k8s-2.livelace.ru/dev/mattermost-mobile-android-build:latest"
         force_pull = true
 
+        cpu_max = "16000m"
+        cpu_min = "8000m"
+
+        mem_max = "50Gi"
+        mem_min = "30Gi"
+
         secret = """
             env, BUILD_CONF, secret/app/mattermost-mobile-android, conf
             env, BUILD_FIREBASE, secret/app/mattermost-mobile-android, firebase
@@ -19,10 +25,10 @@ libraries {
 
         timeout = TIMEOUT
     }
-//     kaniko {
-//         context = "/tmp/job/work"
-//         destination = "dev/mattermost-mobile-android-build:latest"
-//     }
+   kaniko {
+       context = "/tmp/job/work"
+       destination = "dev/mattermost-mobile-android-build:latest"
+   }
     mattermost
     nexus {
         source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"

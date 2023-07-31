@@ -1,4 +1,4 @@
-FROM            ruby:2.7.1-slim
+FROM            ruby:3.2.2-slim
 
 ENV             ANDROID_COMMAND_LINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip"
 ENV             ANDROID_HOME="/opt/android/sdk"
@@ -7,7 +7,7 @@ ENV             ANDROID_PLATFORM_VERSION="31"
 ENV             DEBIAN_FRONTEND="noninteractive"
 ENV             LANG="en_US.UTF-8"
 ENV             LANGUAGE="en_US.UTF-8"
-ENV             PATH=$PATH:/home/builder/.gem/ruby/2.7.0/bin:/opt/android/sdk/platform-tools:/opt/android/tools/bin
+ENV             PATH=$PATH:/home/builder/.local/share/gem/ruby/3.2.0/bin:/opt/android/sdk/platform-tools:/opt/android/tools/bin
 
 RUN             mkdir -p "/usr/share/man/man1" && \
                 apt-get update --fix-missing && \
@@ -23,8 +23,8 @@ RUN             mkdir -p "/usr/share/man/man1" && \
                 usbutils \
                 vim
 
-RUN             echo "deb https://deb.nodesource.com/node_16.x buster main" > "/etc/apt/sources.list.d/nodesource.list" && \
-                echo "deb-src https://deb.nodesource.com/node_16.x buster main" >> "/etc/apt/sources.list.d/nodesource.list" && \
+RUN             echo "deb https://deb.nodesource.com/node_20.x bookworm main" > "/etc/apt/sources.list.d/nodesource.list" && \
+                echo "deb-src https://deb.nodesource.com/node_20.x bookworm main" >> "/etc/apt/sources.list.d/nodesource.list" && \
                 curl -sSL "https://deb.nodesource.com/gpgkey/nodesource.gpg.key" | apt-key add - && \
                 apt-get update && \
                 apt-get install -y nodejs
