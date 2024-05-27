@@ -4,7 +4,7 @@ libraries {
   git {
     repo_url = "https://github.com/livelace/mattermost-mobile-android-build.git"
   }
-  harbor {
+  harbor_replicate {
       policy = "mattermost-mobile-android-build"
   }
   k8s_build {
