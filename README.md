@@ -1,4 +1,4 @@
-### WARNING: Compatible 2.7+
+### WARNING: Compatible 2.17+
 
 ## Description:
 
