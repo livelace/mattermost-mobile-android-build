@@ -25,14 +25,15 @@ libraries {
     
     timeout = TIMEOUT
   }
-  //kaniko {
-  //  context = "/tmp/job/work"
-  //  destination = "dev/mattermost-mobile-android-build:latest"
-  //}
+  kaniko {
+    context = "/tmp/job/work"
+    destination = "dev/mattermost-mobile-android-build:latest"
+  }
   mattermost
   nexus {
     source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"
     destination = "raw/matterlace/matterlace-${env.BRANCH}.apk"
+    ignore_ssl = true
   }
   shell {
     build = """
