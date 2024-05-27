@@ -32,7 +32,7 @@ libraries {
     mattermost
     nexus {
         source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"
-        destination = "dists-internal/matterlace/matterlace-${env.BRANCH}.apk"
+        destination = "raw/matterlace/matterlace-${env.BRANCH}.apk"
         ignore_ssl = true
     }
     shell {
