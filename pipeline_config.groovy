@@ -24,6 +24,8 @@ libraries {
         """
     
     timeout = TIMEOUT
+    
+    kaniko_first = true
   }
   kaniko {
     context = "/tmp/job/work"
