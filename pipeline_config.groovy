@@ -14,8 +14,8 @@ libraries {
     cpu_max = "16000m"
     cpu_min = "8000m"
     
-    mem_max = "50Gi"
-    mem_min = "30Gi"
+    mem_max = "80Gi"
+    mem_min = "40Gi"
     
     secret = """
             env, BUILD_CONF, secret/app/mattermost-mobile-android, conf
