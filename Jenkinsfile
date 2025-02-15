@@ -6,7 +6,7 @@ properties([
         numToKeepStr: '30'
     )),
     parameters([
-        string(defaultValue: '2.20', name: 'BRANCH'),
+        string(defaultValue: 'release-2.25', name: 'BRANCH'),
         string(defaultValue: '120', name: 'TIMEOUT')
     ])
 ])
