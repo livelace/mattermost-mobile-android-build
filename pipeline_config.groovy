@@ -35,18 +35,18 @@ libraries {
   //  destination = "raw/matterlace/matterlace-${env.BRANCH}.apk"
   //  ignore_ssl = true
   //}
-  //shell {
-  //  build = """
-  //          echo \$BUILD_CONF | base64 -d > /conf/build.conf && \
-  //          echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json && \
-  //          echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore && \
+  shell {
+    build = """
+            echo \$BUILD_CONF | base64 -d > /conf/build.conf && \
+            echo \$BUILD_FIREBASE | base64 -d > /conf/google-services.json && \
+            echo \$BUILD_KEYSTORE | base64 -d > /conf/android-apk-signing.keystore && \
 
-  //          sed -i "s|<BRANCH>|${env.BRANCH}|g" /conf/build.conf && \
+            sed -i "s|<BRANCH>|${env.BRANCH}|g" /conf/build.conf && \
 
-  //          /entrypoint.sh build
-  //      """
-  //
-  //  timeout = TIMEOUT
-  //}
+            /entrypoint.sh build
+        """
+
+    timeout = TIMEOUT
+  }
   utils
 }
