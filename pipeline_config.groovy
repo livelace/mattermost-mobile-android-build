@@ -29,12 +29,12 @@ libraries {
   //  context = "/tmp/job/work"
   //  destination = "dev/mattermost-mobile-android-build:latest"
   //}
-  //mattermost
-  //nexus {
-  //  source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"
-  //  destination = "raw/matterlace/matterlace-${env.BRANCH}.apk"
-  //  ignore_ssl = true
-  //}
+  mattermost
+  nexus {
+    source = "/data/${env.BRANCH}/mattermost-mobile/matterlace.apk"
+    destination = "raw/matterlace/matterlace-${env.BRANCH}.apk"
+    ignore_ssl = true
+  }
   shell {
     build = """
             echo \$BUILD_CONF | base64 -d > /conf/build.conf && \
